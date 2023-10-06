@@ -1,0 +1,7 @@
+{
+    "require": {
+        "ext-gd": "*",
+        "maatwebsite/excel": "^3.1",
+        "phpoffice/phpspreadsheet": "^1.27"
+    }
+}
