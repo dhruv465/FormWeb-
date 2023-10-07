@@ -79,6 +79,14 @@ include('delete.php')
               <span class="ml-4">Export Data</span>
             </a>
           </li>
+          <li class="relative px-6 py-3">
+            <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="vkyc.php">
+              <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+              </svg>
+              <span class="ml-4">Vkyc Bucket</span>
+            </a>
+          </li>
       </div>
     </aside>
     <!-- Mobile sidebar -->
@@ -130,6 +138,9 @@ include('delete.php')
               <span class="ml-4">Export Data</span>
             </a>
           </li>
+        </ul>
+        <ul>
+
         </ul>
       </div>
     </aside>
@@ -236,7 +247,7 @@ include('delete.php')
               <div class="bg-white shadow-md rounded ml-8 my-6">
                 <table id="dataTable" class=" min-w-max w-full  table-auto">
                   <thead>
-                    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                    <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                       <th class="py-3 px-6 text-left">#</th>
                       <th class="py-3 px-6 text-left">Customer Name</th>
                       <th class="py-3 px-6 text-left">Mobile No</th>

@@ -96,6 +96,16 @@ if (isset($_POST['submit'])) {
                         </a>
                     </li>
                 </ul>
+                <ul>
+                    <li class="relative px-6 py-3">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="vkyc.php">
+                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                            </svg>
+                            <span class="ml-4">Vkyc Bucket</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </aside>
         <!-- Mobile sidebar -->
@@ -130,6 +140,17 @@ if (isset($_POST['submit'])) {
                         </a>
                     </li>
 
+
+                </ul>
+                <ul>
+                    <li class="relative px-6 py-3">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="vkyc.php">
+                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                            </svg>
+                            <span class="ml-4">Vkyc Bucket</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </aside>
@@ -220,11 +241,11 @@ if (isset($_POST['submit'])) {
                             </label>
                             <label class="block text-sm mt-4">
                                 <span class="text-gray-700 dark:text-gray-400">Alternate No</span>
-                                <input type="number" name="alternate_no" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="+91 **********" value="<?php echo isset($row['alternate_no']) ? $row['alternate_no'] : ''; ?>" />
+                                <input type="number" name="alternate_no" class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="+91 **********" value="<?php echo isset($row['alternate_no']) ? $row['alternate_no'] : ''; ?>" />
                             </label>
                             <label class="block text-sm mt-4">
                                 <span class="text-gray-700 dark:text-gray-400">City</span>
-                                <input type="text" name="city" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Los Engles" value="<?php echo isset($row['city']) ? $row['city'] : ''; ?>" />
+                                <input type="text" name="city" class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Los Engles" value="<?php echo isset($row['city']) ? $row['city'] : ''; ?>" />
                             </label>
                             <label class="block text-sm mt-4">
                                 <span class="text-gray-700 dark:text-gray-400">Customer Pan</span><span style="color: red;">*</span>
@@ -236,7 +257,7 @@ if (isset($_POST['submit'])) {
                             </label>
                             <label class="block text-sm mt-4">
                                 <span class="text-gray-700 dark:text-gray-400">Application No</span>
-                                <input type="number" name="application_no" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="12465" value="<?php echo isset($row['application_no']) ? $row['application_no'] : ''; ?>" />
+                                <input type="number" name="application_no" class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="12465" value="<?php echo isset($row['application_no']) ? $row['application_no'] : ''; ?>" />
                             </label>
                             <label class="block mt-4 text-sm" required>
                                 <span class="text-gray-700 dark:text-gray-400">Application Status</span>
@@ -335,11 +356,11 @@ if (isset($_POST['submit'])) {
                             </label>
                             <label class="block text-sm mt-4 mr-4">
                                 <span class="text-gray-700 dark:text-gray-400">Extra2</span>
-                                <input type="text" name="extra2" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="--" value="<?php echo isset($row['extra2']) ? $row['extra2'] : ''; ?>" />
+                                <input type="text" name="extra2" class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="--" value="<?php echo isset($row['extra2']) ? $row['extra2'] : ''; ?>" />
                             </label>
                             <label class="block text-sm mt-4 mr-4">
                                 <span class="text-gray-700 dark:text-gray-400">Extra3</span>
-                                <input type="text" name="extra3" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="--" value="<?php echo isset($row['extra3']) ? $row['extra3'] : ''; ?>" />
+                                <input type="text" name="extra3" class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="--" value="<?php echo isset($row['extra3']) ? $row['extra3'] : ''; ?>" />
                             </label>
                             <div class="flex justify-end">
                                 <button type="submit" name="submit" class="text-white mt-4 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple px-4 py-2 rounded">
