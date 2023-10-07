@@ -171,7 +171,7 @@ include('delete.php')
                             $vid = $_GET['viewid'];
 
                             // Use prepared statement to avoid SQL injection
-                            $stmt = mysqli_prepare($con, "SELECT * FROM users WHERE id = ?");
+                            $stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE id = ?");
                             mysqli_stmt_bind_param($stmt, "i", $vid);
                             mysqli_stmt_execute($stmt);
                             $result = mysqli_stmt_get_result($stmt);

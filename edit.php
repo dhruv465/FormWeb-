@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     $eid = $_GET['editid'];
 
     // Update query
-    $query = mysqli_query($con, "UPDATE users SET 
+    $query = mysqli_query($conn, "UPDATE users SET 
                 customer_name='$_POST[customer_name]',
                 mobile_no='$_POST[mobile_no]',
                 alternate_no='$_POST[alternate_no]',
@@ -191,7 +191,7 @@ if (isset($_POST['submit'])) {
 
             <?php
             $eid = $_GET['editid'];
-            $ret = mysqli_query($con, "SELECT * FROM users WHERE id='$eid'");
+            $ret = mysqli_query($conn, "SELECT * FROM users WHERE id='$eid'");
             $row = mysqli_fetch_array($ret);
             ?>
             <main class="h-full pb-16 overflow-y-auto">
