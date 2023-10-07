@@ -144,7 +144,7 @@ if (isset($_POST['submit'])) {
                     </button>
                     <!-- Search input -->
                     <div class="flex justify-center flex-1 lg:mr-32">
-                       
+
                     </div>
 
                     <ul class="flex items-center flex-shrink-0 space-x-6">
@@ -211,11 +211,11 @@ if (isset($_POST['submit'])) {
                     <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
                         <form method="post">
                             <label class="block text-sm mt-4 mr-4">
-                                <span class="text-gray-700 dark:text-gray-400">Customer Name</span>
+                                <span class="text-gray-700 dark:text-gray-400">Customer Name</span><span style="color: red;">*</span>
                                 <input type="text" name="customer_name" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane Doe" value="<?php echo isset($row['customer_name']) ? $row['customer_name'] : ''; ?>" />
                             </label>
                             <label class="block text-sm mt-4">
-                                <span class="text-gray-700 dark:text-gray-400">Mobile No</span>
+                                <span class="text-gray-700 dark:text-gray-400">Mobile No</span><span style="color: red;">*</span>
                                 <input type="number" name="mobile_no" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="+91 98900*****" value="<?php echo isset($row['mobile_no']) ? $row['mobile_no'] : ''; ?>" />
                             </label>
                             <label class="block text-sm mt-4">
@@ -227,19 +227,20 @@ if (isset($_POST['submit'])) {
                                 <input type="text" name="city" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Los Engles" value="<?php echo isset($row['city']) ? $row['city'] : ''; ?>" />
                             </label>
                             <label class="block text-sm mt-4">
-                                <span class="text-gray-700 dark:text-gray-400">Customer Pan</span>
+                                <span class="text-gray-700 dark:text-gray-400">Customer Pan</span><span style="color: red;">*</span>
                                 <input type="text" name="customer_pan" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="AEDPP80OL" value="<?php echo isset($row['customer_pan']) ? $row['customer_pan'] : ''; ?>" />
                             </label>
                             <label class="block text-sm mt-4">
-                                <span class="text-gray-700 dark:text-gray-400">Vkyc Link</span>
+                                <span class="text-gray-700 dark:text-gray-400">Vkyc Link</span><span style="color: red;">*</span>
                                 <input type="text" name="vkyc_link" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="https://example.com/" value="<?php echo isset($row['customer_pan']) ? $row['customer_pan'] : ''; ?>" />
                             </label>
                             <label class="block text-sm mt-4">
                                 <span class="text-gray-700 dark:text-gray-400">Application No</span>
                                 <input type="number" name="application_no" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="12465" value="<?php echo isset($row['application_no']) ? $row['application_no'] : ''; ?>" />
                             </label>
-                            <label class="block mt-4 text-sm">
+                            <label class="block mt-4 text-sm" required>
                                 <span class="text-gray-700 dark:text-gray-400">Application Status</span>
+                                <span style="color: red;">*</span>
                                 <select name="application_status" required class="block w-full mt- text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                     <option value="" disabled selected>Select Application Status</option>
                                     <option required>Complete</option>
@@ -248,6 +249,7 @@ if (isset($_POST['submit'])) {
                             </label>
                             <div class="mt-4 text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">Account Incomplete Reason</span>
+                                <span style="color: red;">*</span>
                                 <div class="mt-2">
                                     <label class="inline-flex items-center text-gray-600 dark:text-gray-400">
                                         <input type="radio" required class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" name="account_incomplete_reason" value="Otp Issue" />
@@ -259,32 +261,38 @@ if (isset($_POST['submit'])) {
                                     </label>
                                 </div>
                             </div>
-                            <label class="block text-sm mt-4 mr-4">
+                            <label class="block text-sm mt-4 mr-4" required>
                                 <span class="text-gray-700 dark:text-gray-400">Backend Name</span>
+                                <span style="color: red;">*</span>
                                 <input type="text" name="backend_name" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane Doe" value="<?php echo isset($row['backend_name']) ? $row['backend_name'] : ''; ?>" />
                             </label>
 
                             <label class="block text-sm mt-4 mr-4">
                                 <span class="text-gray-700 dark:text-gray-400">Caller Name</span>
+                                <span style="color: red;">*</span>
                                 <input type="text" name="caller_name" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="John" value="<?php echo isset($row['caller_name']) ? $row['caller_name'] : ''; ?>" />
                             </label>
 
                             <label class="block text-sm mt-4 mr-4">
                                 <span class="text-gray-700 dark:text-gray-400">Office Name</span>
+                                <span style="color: red;">*</span>
                                 <input type="text" name="office_name" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="GT1" value="<?php echo isset($row['office_name']) ? $row['office_name'] : ''; ?>" />
                             </label>
 
                             <label class="block text-sm mt-4 mr-4">
                                 <span class="text-gray-700 dark:text-gray-400">Mgr Name</span>
+                                <span style="color: red;">*</span>
                                 <input type="text" name="mgr_name" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="--" value="<?php echo isset($row['mgr_name']) ? $row['mgr_name'] : ''; ?>" />
                             </label>
 
                             <label class="block text-sm mt-4 mr-4">
                                 <span class="text-gray-700 dark:text-gray-400">Form Filed Date</span>
+                                <span style="color: red;">*</span>
                                 <input type="date" name="form_filed_date" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane Doe" value="<?php echo isset($row['form_filed_date']) ? $row['form_filed_date'] : ''; ?>" />
                             </label>
                             <div class="mt-4 text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">Surrogate Type</span>
+                                <span style="color: red;">*</span>
                                 <div class="mt-2">
                                     <label class="inline-flex items-center text-gray-600 dark:text-gray-400">
                                         <input type="radio" required class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" name="surrogate_type" value="LB" />
@@ -306,15 +314,18 @@ if (isset($_POST['submit'])) {
                             </div>
                             <label class="block mt-4 text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">IPA Status</span>
+                                <span style="color: red;">*</span>
                                 <select name="ipa_status" required class="block w-full mt- text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray 
                                             value=" <?php echo isset($row['ipa_status']) ? $row['ipa_status'] : ''; ?>"">
                                     <option value="" disabled selected>Select IPA Status</option>
                                     <option>Declined</option>
                                     <option>Approved</option>
+                                    <option>Incomplete</option>
                                 </select>
                             </label>
                             <label class="block mt-4 text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">Pickup Remark</span>
+                                <span style="color: red;">*</span>
                                 <select name="pickup_remark" required class="block w-full mt- text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray 
                                             value=" <?php echo isset($row['pickup_remark']) ? $row['pickup_remark'] : ''; ?>"">
                                     <option value="" disabled selected>Select Pickup Remark</option>

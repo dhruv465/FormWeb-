@@ -5,7 +5,7 @@ include('dbconnection.php');
 $updateSuccess = false;
 $updateError = false;
 
-include('import.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -213,9 +213,8 @@ include('import.php');
 
                         <?php endif; ?>
                     </div>
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="exportdb.php" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
-
                             <select name="export_file_type" required class="block w-full mt- text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                 <option value="" disabled selected>Select An Export File Type</option>
                                 <option>XLSX</option>
@@ -224,12 +223,13 @@ include('import.php');
                             </select>
 
                             <div class="flex justify-end mt-4">
-                                <button name="export_file_type" type="submit" data-te-ripple-init data-te-ripple-color="light" class="ripple-btn text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple px-4 py-2 rounded" data-aos="fade-up" data-aos-duration="3000">
+                                <button name="export_excel_btn" type="submit" data-te-ripple-init data-te-ripple-color="light" class="ripple-btn text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple px-4 py-2 rounded" data-aos="fade-up" data-aos-duration="3000">
                                     Export Data
                                 </button>
                             </div>
                         </div>
                     </form>
+
                 </div>
             </main>
         </div>
