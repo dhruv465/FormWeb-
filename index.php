@@ -233,8 +233,8 @@ include('delete.php')
           <!-- component -->
           <div class="overflow-x-auto">
             <div class="w-full lg:w-5/6">
-              <div class="bg-white shadow-md rounded my-6">
-                <table id="dataTable" class=" min-w-max w-full table-auto">
+              <div class="bg-white shadow-md rounded ml-8 my-6">
+                <table id="dataTable" class=" min-w-max w-full  table-auto">
                   <thead>
                     <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                       <th class="py-3 px-6 text-left">#</th>

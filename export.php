@@ -197,7 +197,7 @@ include('import.php');
             <main class="h-full pb-16 overflow-y-auto">
                 <div class="container px-6 mx-auto grid">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        Export Data Via DB in Excel File
+                        Export Data From DB
                     </h2>
                     <div class="m-4">
                         <?php if ($status === 'success') : ?>
@@ -210,13 +210,21 @@ include('import.php');
                                 <strong class="font-bold">Error!</strong>
                                 <span class="block sm:inline">Data Export failed.</span>
                             </div>
-                       
+
                         <?php endif; ?>
                     </div>
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <div class="flex justify-end">
-                                <button type="submit" name="save_excel_data" data-te-ripple-init data-te-ripple-color="light" class="ripple-btn text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple px-4 py-2 rounded" data-aos="fade-up" data-aos-duration="3000">
+
+                            <select name="export_file_type" required class="block w-full mt- text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                <option value="" disabled selected>Select An Export File Type</option>
+                                <option>XLSX</option>
+                                <option>XLS</option>
+                                <option>CSV</option>
+                            </select>
+
+                            <div class="flex justify-end mt-4">
+                                <button name="export_file_type" type="submit" data-te-ripple-init data-te-ripple-color="light" class="ripple-btn text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple px-4 py-2 rounded" data-aos="fade-up" data-aos-duration="3000">
                                     Export Data
                                 </button>
                             </div>
