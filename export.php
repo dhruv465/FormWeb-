@@ -242,7 +242,7 @@ $updateError = false;
 
                             <!-- Add the filter input field -->
                             <select type="text" name="filter_value" placeholder="Enter filter value" class="block w-full mt-3 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-input focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                <option value="" disabled selected>Select An Export File Type</option>
+                                <option value="" disabled selected>Select An Office Name</option>
                                 <option value="gt1">GT1</option>
                                 <option value="gt2">GT2</option>
                                 <option value="gt3">GT3</option>
