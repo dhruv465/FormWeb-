@@ -359,7 +359,7 @@ include('import.php');
                   <input type="text" name="mgr_name" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="--" />
                 </label>
 
-                <label class="block text-sm mt-4">
+                <!-- <label class="block text-sm mt-4">
                   <span class="text-gray-700 dark:text-gray-400">Form Filed Date</span><span style="color: red;">*</span>
                   <input type="date" name="form_filed_date" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane Doe" disabled value="<?php echo date('Y-m-d'); ?>" />
                 </label>
@@ -369,7 +369,7 @@ include('import.php');
 
                   // Set the value of the input field to the current date
                   document.getElementById('formFiledDate').value = currentDate;
-                </script>
+                </script> -->
 
                 <div class="mt-4 text-sm">
                   <span class="text-gray-700 dark:text-gray-400">Surrogate Type</span><span style="color: red;">*</span>

@@ -306,11 +306,11 @@ if (isset($_POST['submit'])) {
                                 <input type="text" name="mgr_name" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="--" value="<?php echo isset($row['mgr_name']) ? $row['mgr_name'] : ''; ?>" />
                             </label>
 
-                            <label class="block text-sm mt-4 mr-4">
+                            <!-- <label class="block text-sm mt-4 mr-4">
                                 <span class="text-gray-700 dark:text-gray-400">Form Filed Date</span>
                                 <span style="color: red;">*</span>
                                 <input type="date" name="form_filed_date" required class="block mt- w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane Doe" value="<?php echo isset($row['form_filed_date']) ? $row['form_filed_date'] : ''; ?>" />
-                            </label>
+                            </label> -->
                             <div class="mt-4 text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">Surrogate Type</span>
                                 <span style="color: red;">*</span>

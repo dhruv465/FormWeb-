@@ -235,18 +235,32 @@ $updateError = false;
                         <div class="mb-3">
                             <select name="export_file_type" required class="block w-full mt- text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                 <option value="" disabled selected>Select An Export File Type</option>
-                                <option>XLSX</option>
-                                <option>XLS</option>
-                                <option>CSV</option>
+                                <option value="xlsx">XLSX</option>
+                                <option value="xls">XLS</option>
+                                <option value="csv">CSV</option>
                             </select>
 
-                            <div class="flex justify-end mt-4">
-                                <button name="export_excel_btn" type="submit" data-te-ripple-init data-te-ripple-color="light" class="ripple-btn text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple px-4 py-2 rounded" data-aos="fade-up" data-aos-duration="3000">
+                            <!-- Add the filter input field -->
+                            <select type="text" name="filter_value" placeholder="Enter filter value" class="block w-full mt-3 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-input focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                <option value="" disabled selected>Select An Export File Type</option>
+                                <option value="gt1">GT1</option>
+                                <option value="gt2">GT2</option>
+                                <option value="gt3">GT3</option>
+                                <option value="gt4">GT4</option>
+                            </select>
+                            <div class="flex justify-end mt-4 gap-4">
+                                <button name="export_data_btn" type="submit" data-te-ripple-init data-te-ripple-color="light" class="ripple-btn text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple px-4 py-2 rounded" data-aos="fade-up" data-aos-duration="3000">
                                     Export Data
                                 </button>
+                                <a href="export.php">
+                                    <button name="export_data_btn" type="reset" data-te-ripple-init data-te-ripple-color="light" class="ripple-btn text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple px-4 py-2 rounded" data-aos="fade-up" data-aos-duration="3000">
+                                        Reset
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </form>
+
 
                 </div>
             </main>

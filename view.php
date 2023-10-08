@@ -214,7 +214,7 @@ include('delete.php')
                                 'Caller Name' => 'caller_name',
                                 'Office Name' => 'office_name',
                                 'Manager Name' => 'mgr_name',
-                                'Form Filed Date' => 'form_filed_date',
+                                'Form Filed Date' => 'created_at',
                                 'Surrogate Type' => 'surrogate_type',
                                 'IPA Status' => 'ipa_status',
                                 'Pickup Remark' => 'pickup_remark',
