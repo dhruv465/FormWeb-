@@ -1,12 +1,11 @@
 <?php
-include('dbconnection.php');
-
+include 'dbconnection.php';
 
 // SQL query to fetch data from your database
-$sql = "SELECT * FROM users";
+$sql = 'SELECT * FROM users';
 $result = $conn->query($sql);
 
-include('delete.php');
+include 'delete.php';
 
 ?>
 
@@ -237,7 +236,7 @@ include('delete.php');
                                         <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                     </svg>
                                 </div>
-                                <input datepicker datepicker-autohide datepicker-buttons datepicker-format="yyyy/mm/dd" name="date" required value="<?= isset($_GET['date']) == true ? $_GET['date'] : '' ?>" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500" placeholder="Select date">
+                                <input datepicker datepicker-autohide datepicker-buttons datepicker-format="yyyy/mm/dd" name="date" required value="<?php echo isset($_GET['date']) == true ? $_GET['date'] : ''; ?>" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500" placeholder="Select date">
                             </div>
                             <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
                             <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border-0 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">
@@ -248,52 +247,59 @@ include('delete.php');
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
                                     <select name="ipa_status" required class="w-32 ml-6 outline-none hover:bg-gray-200 border-none flex-shrink-0 z-10 inline-flex items-center py-2 px-2 text-sm font-medium dark:text-gray-300 form-select focus:border-none focus:outline-purple focus:shadow-outline-purple dark:focus:shadow-outline-purple">
                                         <option value="" disabled selected>IPA Status</option>
-                                        <option value="declined" <?= isset($_GET['ipa_status']) == true ? ($_GET['ipa_status'] == 'declined' ? 'selected' : '') : '' ?>>
+                                        <option value="declined" <?php echo isset($_GET['ipa_status']) == true ? ($_GET['ipa_status'] == 'declined' ? 'selected' : '') : ''; ?>>
                                             Declined
                                         </option>
-                                        <option value="approved" <?= isset($_GET['ipa_status']) == true ? ($_GET['ipa_status'] == 'approved'  ? 'selected' : '') : '' ?>>
+                                        <option value="approved" <?php echo isset($_GET['ipa_status']) == true ? ($_GET['ipa_status'] == 'approved' ? 'selected' : '') : ''; ?>>
                                             Approved
                                         </option>
-                                        <option value="incomplete" <?= isset($_GET['ipa_status']) == true ? ($_GET['ipa_status'] == 'incomplete' ? 'selected' : '') : '' ?>>
+                                        <option value="incomplete" <?php echo isset($_GET['ipa_status']) == true ? ($_GET['ipa_status'] == 'incomplete' ? 'selected' : '') : ''; ?>>
                                             Incomplete
                                         </option>
                                     </select>
                                     <select name="office_name" required class="w-32 ml-6 mt-2 outline-none hover:bg-gray-200 border-none flex-shrink-0 z-10 inline-flex items-center py-2 px-2 text-sm font-medium dark:text-gray-300 form-select focus:border-none focus:outline-purple focus:shadow-outline-purple dark:focus:shadow-outline-purple">
                                         <option value="" disabled selected>Office Name</option>
-                                        <option value="gt1" <?= isset($_GET['office_name']) == true ? ($_GET['office_name'] == 'gt1' ? 'selected' : '') : '' ?>>
+                                        <option value="gt1" <?php echo isset($_GET['office_name']) == true ? ($_GET['office_name'] == 'gt1' ? 'selected' : '') : ''; ?>>
                                             GT1
                                         </option>
-                                        <option value="gt2" <?= isset($_GET['office_name']) == true ? ($_GET['office_name'] == 'gt2'  ? 'selected' : '') : '' ?>>
+                                        <option value="gt2" <?php echo isset($_GET['office_name']) == true ? ($_GET['office_name'] == 'gt2' ? 'selected' : '') : ''; ?>>
                                             GT2
                                         </option>
-                                        <option value="gt3" <?= isset($_GET['office_name']) == true ? ($_GET['office_name'] == 'gt3' ? 'selected' : '') : '' ?>>
+                                        <option value="gt3" <?php echo isset($_GET['office_name']) == true ? ($_GET['office_name'] == 'gt3' ? 'selected' : '') : ''; ?>>
                                             GT3
                                         </option>
-                                        <option value="gt4" <?= isset($_GET['office_name']) == true ? ($_GET['office_name'] == 'gt4' ? 'selected' : '') : '' ?>>
+                                        <option value="gt4" <?php echo isset($_GET['office_name']) == true ? ($_GET['office_name'] == 'gt4' ? 'selected' : '') : ''; ?>>
                                             GT4
                                         </option>
                                     </select>
                                     <select name="application_status" required class="w-32 ml-6 mt-2 outline-none hover:bg-gray-200 border-none flex-shrink-0 z-10 inline-flex items-center py-2 px-2 text-sm font-medium dark:text-gray-300 form-select focus:border-none focus:outline-purple focus:shadow-outline-purple dark:focus:shadow-outline-purple">
                                         <option value="" disabled selected>App's Status</option>
-                                        <option value="complete" <?= isset($_GET['application_status']) == true ? ($_GET['application_status'] == 'complete' ? 'selected' : '') : '' ?>>
+                                        <option value="complete" <?php echo isset($_GET['application_status']) == true ? ($_GET['application_status'] == 'complete' ? 'selected' : '') : ''; ?>>
                                             Complete
                                         </option>
-                                        <option value="Incomplete" <?= isset($_GET['application_status']) == true ? ($_GET['application_status'] == 'Incomplete'  ? 'selected' : '') : '' ?>>
+                                        <option value="Incomplete" <?php echo isset($_GET['application_status']) == true ? ($_GET['application_status'] == 'Incomplete' ? 'selected' : '') : ''; ?>>
                                             Incomplete
                                         </option>
                                     </select>
                                 </ul>
                             </div>
-
+          
                             <div class="relative w-1/2">
                                 <input id="search" class="w-full pl-8 pr-2 h-full text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-r-lg dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white  focus:outline-none ring-purple-600  form-input" type="text" placeholder="Search for Data" aria-label="Search" />
-                                <button type="reset" class="absolute top-0 right-0 p-2.5  text-sm font-medium h-full text-white rounded-r-lg transition-colors duration-150 bg-purple-600 border border-transparent active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple ">
+                                <button type="submit" class="absolute top-0 right-0 p-2.5  text-sm font-medium h-full text-white rounded-r-lg transition-colors duration-150 bg-purple-600 border border-transparent active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple ">
                                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                     </svg>
                                     <span class="sr-only">Search</span>
                                 </button>
+                                
                             </div>
+                             <a href="vkyc.php">
+                                    <button name="export_data_btn" type="reset" data-te-ripple-init data-te-ripple-color="light" class="ripple-btn ml-6 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple px-4 py-2 rounded" data-aos="fade-up" data-aos-duration="3000">
+                                        Reset
+                                    </button>
+                                </a>
+                               
                             <!-- <div class="relative  ml-16">
                                 <a href="vkyc.php">
                                     <button type="submit" class="absolute top-0 right-0 p-2.5  text-sm font-medium h-full text-white rounded-lg transition-colors duration-150 bg-purple-600 border border-transparent active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple ">
@@ -313,74 +319,73 @@ include('delete.php');
                         <div class="w-full lg:w-5/6">
                             <div class="bg-white shadow-md rounded ml-8 my-6">
                                 <?php
-                                include('dbconnection.php');
+                                include 'dbconnection.php';
 
-                                // Function to validate input data
-                                function validate($data)
-                                {
-                                    $data = trim($data);
-                                    $data = stripslashes($data);
-                                    $data = htmlspecialchars($data);
-                                    return $data;
-                                }
+// Function to validate input data
+function validate($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
 
-                                // Number of rows to display per page
-                                $rowsPerPage = 10;
+    return $data;
+}
 
-                                // Your code to fetch all data
-                                $resultAll = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
+// Number of rows to display per page
+$rowsPerPage = 10;
 
-                                // Your code to fetch filtered data
-                                if (isset($_GET['date']) && $_GET['date'] != '' && isset($_GET['ipa_status']) && $_GET['ipa_status'] != '') {
-                                    $date = validate($_GET['date']);
-                                    $ipa_status = validate($_GET['ipa_status']);
-                                    $office_name = isset($_GET['office_name']) ? validate($_GET['office_name']) : '';
-                                    $application_status = isset($_GET['application_status']) ? validate($_GET['application_status']) : '';
-                                    // Use prepared statements to prevent SQL injection
-                                    $sql = "SELECT * FROM users WHERE created_at=? AND ipa_status=? AND application_status=?";
+// Your code to fetch all data
+$resultAll = mysqli_query($conn, 'SELECT * FROM users ORDER BY id DESC');
 
-                                    // Add office_name to the SQL query if it's provided
-                                    if (!empty($office_name)) {
-                                        $sql .= " AND office_name=?";
-                                    }
+// Your code to fetch filtered data
+if (isset($_GET['date']) && $_GET['date'] != '' && isset($_GET['ipa_status']) && $_GET['ipa_status'] != '') {
+    $date = validate($_GET['date']);
+    $ipa_status = validate($_GET['ipa_status']);
+    $office_name = isset($_GET['office_name']) ? validate($_GET['office_name']) : '';
+    $application_status = isset($_GET['application_status']) ? validate($_GET['application_status']) : '';
+    // Use prepared statements to prevent SQL injection
+    $sql = 'SELECT * FROM users WHERE created_at=? AND ipa_status=? AND application_status=?';
 
-                                    $sql .= " ORDER BY id DESC";
+    // Add office_name to the SQL query if it's provided
+    if (!empty($office_name)) {
+        $sql .= ' AND office_name=?';
+    }
 
-                                    $stmt = $conn->prepare($sql);
-                                    $stmt->bind_param("ssss", $date, $ipa_status, $office_name, $application_status);
-                                    $stmt->execute();
-                                    $resultFiltered = $stmt->get_result();
-                                } else {
-                                    $resultFiltered = $resultAll; // Display all data if no filter is applied
-                                }
+    $sql .= ' ORDER BY id DESC';
 
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ssss', $date, $ipa_status, $office_name, $application_status);
+    $stmt->execute();
+    $resultFiltered = $stmt->get_result();
+} else {
+    $resultFiltered = $resultAll; // Display all data if no filter is applied
+}
 
-                                // Number of rows to display based on whether it's filtered or not
-                                $totalRows = $resultFiltered->num_rows;
+// Number of rows to display based on whether it's filtered or not
+$totalRows = $resultFiltered->num_rows;
 
-                                // Calculate the total number of pages
-                                $totalPages = ceil($totalRows / $rowsPerPage);
+// Calculate the total number of pages
+$totalPages = ceil($totalRows / $rowsPerPage);
 
-                                // Get the current page from the URL parameter or set it to 1
-                                $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+// Get the current page from the URL parameter or set it to 1
+$page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 
-                                // Calculate the SQL LIMIT clause for pagination
-                                $offset = ($page - 1) * $rowsPerPage;
+// Calculate the SQL LIMIT clause for pagination
+$offset = ($page - 1) * $rowsPerPage;
 
-                                // Your code to fetch data with pagination
-                                if (isset($_GET['date']) && $_GET['date'] != '' && isset($_GET['ipa_status']) && $_GET['ipa_status'] != '' && isset($_GET['office_name']) && $_GET['office_name'] != '' && isset($_GET['application_status']) && $_GET['application_status'] != '') {
-                                    // Use prepared statements to prevent SQL injection
-                                    $stmt = $conn->prepare("SELECT * FROM users WHERE created_at=? AND ipa_status=? AND office_name=?  AND application_status=? ORDER BY id DESC LIMIT ?, ?");
-                                    $stmt->bind_param("sssssi", $date, $ipa_status, $office_name, $application_status, $offset, $rowsPerPage);
-                                    $stmt->execute();
-                                    $result = $stmt->get_result();
-                                } else {
-                                    $sql = "SELECT * FROM users ORDER BY id DESC LIMIT $offset, $rowsPerPage";
-                                    $result = $conn->query($sql);
-                                }
+// Your code to fetch data with pagination
+if (isset($_GET['date']) && $_GET['date'] != '' && isset($_GET['ipa_status']) && $_GET['ipa_status'] != '' && isset($_GET['office_name']) && $_GET['office_name'] != '' && isset($_GET['application_status']) && $_GET['application_status'] != '') {
+    // Use prepared statements to prevent SQL injection
+    $stmt = $conn->prepare('SELECT * FROM users WHERE created_at=? AND ipa_status=? AND office_name=?  AND application_status=? ORDER BY id DESC LIMIT ?, ?');
+    $stmt->bind_param('sssssi', $date, $ipa_status, $office_name, $application_status, $offset, $rowsPerPage);
+    $stmt->execute();
+    $result = $stmt->get_result();
+} else {
+    $sql = "SELECT * FROM users ORDER BY id DESC LIMIT $offset, $rowsPerPage";
+    $result = $conn->query($sql);
+}
 
-
-                                ?>
+?>
 
                                 <!-- Your HTML code for rendering the table -->
                                 <table id="dataTable" class="min-w-max w-full table-auto">
@@ -398,120 +403,120 @@ include('delete.php');
                                     </thead>
                                     <tbody id="search-results" class="text-gray-600 text-sm font-light">
                                         <?php
-                                        if ($result->num_rows > 0) {
-                                            // Loop through each row in the result
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo '<tr id="row-' . $row['id'] . '" class="border-b w-full border-gray-200 hover:bg-gray-100">';
-                                                // Output your table data for each row
-                                                echo '<td class="py-3 px-6 text-left">' . $row['id'] . '</td>';
-                                                echo '<td class="py-3 px-6 text-left whitespace-nowrap">';
-                                                echo '<div class="flex items-center">';
-                                                echo '<span class="font-medium">' . $row['office_name'] . '</span>';
-                                                echo '</div>';
-                                                echo '</td>';
-                                                echo '<td class="py-3 px-6 text-left">';
-                                                echo '<div class="flex items-center">';
-                                                echo '<span>' . $row['mobile_no'] . '</span>';
-                                                echo '</div>';
-                                                echo '</td>';
-                                                echo '<td class="py-3 px-6 text-center">';
-                                                echo '<div class="flex items-center justify-center">';
-                                                echo $row['vkyc_link'];
-                                                echo '</div>';
-                                                echo '</td>';
-                                                echo '<td class="py-3 px-6 text-center">';
-                                                echo '<span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">' . $row['application_status'] . '</span>';
-                                                echo '</td>';
-                                                echo '<td class="py-3 px-6 text-center">';
-                                                echo '<span class="text-orange-700 bg-orange-100 py-1 px-3 rounded-full text-xs">' . $row['ipa_status'] . '</span>';
-                                                echo '</td>';
-                                                echo '<td class="py-3 px-6 text-center">';
-                                                echo '<span class="px-4 py-3 text-sm">' . $row['created_at'] . '</span>';
-                                                echo '</td>';
-                                                echo '<td class="py-3 px-6 text-center">';
-                                                echo '<div class="flex item-center justify-center">';
-                                                echo '<div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110 cursor-pointer">';
-                                                echo '<a href="view.php?viewid=' . $row['id'] . '" class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110 cursor-pointer">';
-                                                echo '<svg xmlns="http://www.w3.org/2000/svg" class="view" title="View" type="button" fill="none" viewBox="0 0 24 24" stroke="currentColor">';
-                                                echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />';
-                                                echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />';
-                                                echo '</svg>';
-                                                echo '</a>';
-                                                echo '</div>';
+        if ($result->num_rows > 0) {
+            // Loop through each row in the result
+            while ($row = $result->fetch_assoc()) {
+                echo '<tr id="row-'.$row['id'].'" class="border-b w-full border-gray-200 hover:bg-gray-100">';
+                // Output your table data for each row
+                echo '<td class="py-3 px-6 text-left">'.$row['id'].'</td>';
+                echo '<td class="py-3 px-6 text-left whitespace-nowrap">';
+                echo '<div class="flex items-center">';
+                echo '<span class="font-medium">'.$row['office_name'].'</span>';
+                echo '</div>';
+                echo '</td>';
+                echo '<td class="py-3 px-6 text-left">';
+                echo '<div class="flex items-center">';
+                echo '<span>'.$row['mobile_no'].'</span>';
+                echo '</div>';
+                echo '</td>';
+                echo '<td class="py-3 px-6 text-center">';
+                echo '<div class="flex items-center justify-center">';
+                echo $row['vkyc_link'];
+                echo '</div>';
+                echo '</td>';
+                echo '<td class="py-3 px-6 text-center">';
+                echo '<span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">'.$row['application_status'].'</span>';
+                echo '</td>';
+                echo '<td class="py-3 px-6 text-center">';
+                echo '<span class="text-orange-700 bg-orange-100 py-1 px-3 rounded-full text-xs">'.$row['ipa_status'].'</span>';
+                echo '</td>';
+                echo '<td class="py-3 px-6 text-center">';
+                echo '<span class="px-4 py-3 text-sm">'.$row['created_at'].'</span>';
+                echo '</td>';
+                echo '<td class="py-3 px-6 text-center">';
+                echo '<div class="flex item-center justify-center">';
+                echo '<div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110 cursor-pointer">';
+                echo '<a href="view.php?viewid='.$row['id'].'" class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110 cursor-pointer">';
+                echo '<svg xmlns="http://www.w3.org/2000/svg" class="view" title="View" type="button" fill="none" viewBox="0 0 24 24" stroke="currentColor">';
+                echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />';
+                echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />';
+                echo '</svg>';
+                echo '</a>';
+                echo '</div>';
 
-                                                echo '<a href="edit.php?editid=' . $row['id'] . '" title="Edit" class="edit w-4 mr-2 transform hover:text-purple-500 hover:scale-110 cursor-pointer">';
-                                                echo '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">';
-                                                echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />';
-                                                echo '</svg>';
-                                                echo '</a>';
+                echo '<a href="edit.php?editid='.$row['id'].'" title="Edit" class="edit w-4 mr-2 transform hover:text-purple-500 hover:scale-110 cursor-pointer">';
+                echo '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">';
+                echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />';
+                echo '</svg>';
+                echo '</a>';
 
-                                                // echo '<a href="dashboard.php?delid=' . $row['id'] . '"  class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110 cursor-pointer">';
-                                                // echo '    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">';
-                                                // echo '        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />';
-                                                // echo '    </svg>';
-                                                // echo '</a>';
-                                                echo '</div>';
-                                                echo '</td>';
-                                                echo '</tr>';
-                                            }
-                                        } else {
-                                            echo '<tr>
+                // echo '<a href="dashboard.php?delid=' . $row['id'] . '"  class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110 cursor-pointer">';
+                // echo '    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">';
+                // echo '        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />';
+                // echo '    </svg>';
+                // echo '</a>';
+                echo '</div>';
+                echo '</td>';
+                echo '</tr>';
+            }
+        } else {
+            echo '<tr>
                                     <td colspan="8" class="py-6 px-6 text-center font-semibold">NO Data Inserted Yet</td>
                                 </tr>';
-                                        }
-                                        ?>
+        }
+?>
                                     </tbody>
                                 </table>
 
                                 <?php
                                 // Output the pagination links
                                 echo '<nav aria-label="Page navigation example" class="flex-end  p-2.5">';
-                                echo '<ul class="flex items-center -space-x-px h-8 text-sm">';
+echo '<ul class="flex items-center -space-x-px h-8 text-sm">';
 
-                                // Previous page link
-                                echo '<li>';
-                                if ($page > 1) {
-                                    echo '<a href="vkyc.php?page=' . ($page - 1) . '" class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">';
-                                    echo '<span class="sr-only">Previous</span>';
-                                    echo '<svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">';
-                                    echo '<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>';
-                                    echo '</svg>';
-                                    echo '</a>';
-                                }
-                                echo '</li>';
+// Previous page link
+echo '<li>';
+if ($page > 1) {
+    echo '<a href="vkyc.php?page='.($page - 1).'" class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">';
+    echo '<span class="sr-only">Previous</span>';
+    echo '<svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">';
+    echo '<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>';
+    echo '</svg>';
+    echo '</a>';
+}
+echo '</li>';
 
-                                // Page links
-                                for (
-                                    $i = 1;
-                                    $i <= $totalPages;
-                                    $i++
-                                ) {
-                                    echo '<li>';
-                                    echo '<a href="vkyc.php?page=' . $i . '" class="flex items-center justify-center px-3 h-8 leading-tight ';
-                                    if ($i == $page) {
-                                        echo 'text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white';
-                                    } else {
-                                        echo 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
-                                    }
-                                    echo '">' . $i . '</a>';
-                                    echo '</li>';
-                                }
+// Page links
+for (
+    $i = 1;
+    $i <= $totalPages;
+    ++$i
+) {
+    echo '<li>';
+    echo '<a href="vkyc.php?page='.$i.'" class="flex items-center justify-center px-3 h-8 leading-tight ';
+    if ($i == $page) {
+        echo 'text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white';
+    } else {
+        echo 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
+    }
+    echo '">'.$i.'</a>';
+    echo '</li>';
+}
 
-                                // Next page link
-                                echo '<li>';
-                                if ($page < $totalPages) {
-                                    echo '<a href="vkyc.php?page=' . ($page + 1) . '" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">';
-                                    echo '<span class="sr-only">Next</span>';
-                                    echo '<svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">';
-                                    echo '<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>';
-                                    echo '</svg>';
-                                    echo '</a>';
-                                }
-                                echo '</li>';
+// Next page link
+echo '<li>';
+if ($page < $totalPages) {
+    echo '<a href="vkyc.php?page='.($page + 1).'" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">';
+    echo '<span class="sr-only">Next</span>';
+    echo '<svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">';
+    echo '<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>';
+    echo '</svg>';
+    echo '</a>';
+}
+echo '</li>';
 
-                                echo '</ul>';
-                                echo '</nav>';
-                                ?>
+echo '</ul>';
+echo '</nav>';
+?>
 
 
                             </div>
